@@ -64,17 +64,17 @@ const photos = [
       const img = item.querySelector<HTMLImageElement>('img');
       if (!img) return;
 
-      // Parallax — image drifts opposite to scroll direction
+      // Zoom-out — image starts scaled up and shrinks to normal as it scrolls through
       gsap.fromTo(img,
-        { yPercent: -7 },
+        { scale: 1.4 },
         {
-          yPercent: 7,
+          scale: 1.0,
           ease: 'none',
           scrollTrigger: {
             trigger: item,
             start: 'top bottom',
             end: 'bottom top',
-            scrub: 1.2,
+            scrub: 1.5,
           },
         }
       );

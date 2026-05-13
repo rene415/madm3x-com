@@ -50,8 +50,6 @@ body {
   width: 100%;
   height: auto;
   display: block;
-  /* slightly oversized so parallax shift doesn't expose edges */
-  transform: scale(1.14);
   transform-origin: center center;
   will-change: transform;
 }
