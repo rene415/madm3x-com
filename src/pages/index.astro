@@ -29,8 +29,14 @@ const photos = [
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MADM3X</title>
+  <link rel="icon" type="image/png" href="/logo/logo-bw.png" />
+  <link rel="apple-touch-icon" href="/logo/logo-color.png" />
 </head>
 <body>
+  <a href="/" class="site-logo" aria-label="MADM3X">
+    <img src="/logo/logo-color.png" alt="MADM3X" />
+  </a>
+
   <main class="gallery">
     {photos.map(({ seed, w, h }) => (
       <div class="photo-item">

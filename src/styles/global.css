@@ -56,6 +56,28 @@ body {
   will-change: transform;
 }
 
+/* ── site logo ───────────────────────────────────────────── */
+.site-logo {
+  position: fixed;
+  top: 20px;
+  left: 24px;
+  z-index: 100;
+  display: block;
+  width: 72px;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
+.site-logo:hover {
+  opacity: 1;
+}
+
+.site-logo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* ── motion guard ────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   .photo-item { opacity: 1 !important; transform: none !important; }
