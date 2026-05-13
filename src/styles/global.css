@@ -23,16 +23,20 @@ body {
 
 /* ── gallery layout ─────────────────────────────────────── */
 .gallery {
-  columns: 3;
+  columns: 4;
   column-gap: 8px;
   padding: 8px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
+  .gallery { columns: 3; }
+}
+
+@media (max-width: 720px) {
   .gallery { columns: 2; }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 480px) {
   .gallery { columns: 1; }
 }
 
