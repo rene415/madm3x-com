@@ -1,0 +1,92 @@
+---
+import '../styles/global.css';
+
+const photos = [
+  { seed: 'madm01', w: 600, h: 820 },
+  { seed: 'madm02', w: 600, h: 440 },
+  { seed: 'madm03', w: 600, h: 760 },
+  { seed: 'madm04', w: 600, h: 900 },
+  { seed: 'madm05', w: 600, h: 480 },
+  { seed: 'madm06', w: 600, h: 700 },
+  { seed: 'madm07', w: 600, h: 520 },
+  { seed: 'madm08', w: 600, h: 860 },
+  { seed: 'madm09', w: 600, h: 620 },
+  { seed: 'madm10', w: 600, h: 780 },
+  { seed: 'madm11', w: 600, h: 460 },
+  { seed: 'madm12', w: 600, h: 840 },
+  { seed: 'madm13', w: 600, h: 560 },
+  { seed: 'madm14', w: 600, h: 720 },
+  { seed: 'madm15', w: 600, h: 500 },
+  { seed: 'madm16', w: 600, h: 800 },
+  { seed: 'madm17', w: 600, h: 660 },
+  { seed: 'madm18', w: 600, h: 420 },
+];
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MADM3X</title>
+</head>
+<body>
+  <main class="gallery">
+    {photos.map(({ seed, w, h }) => (
+      <div class="photo-item">
+        <img
+          src={`https://picsum.photos/seed/${seed}/${w}/${h}`}
+          alt=""
+          loading="lazy"
+          decoding="async"
+          width={w}
+          height={h}
+        />
+      </div>
+    ))}
+  </main>
+
+  <script>
+    import gsap from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const items = document.querySelectorAll<HTMLElement>('.photo-item');
+
+    items.forEach((item, i) => {
+      const img = item.querySelector<HTMLImageElement>('img');
+      if (!img) return;
+
+      // Parallax — image drifts opposite to scroll direction
+      gsap.fromTo(img,
+        { yPercent: -7 },
+        {
+          yPercent: 7,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: item,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: 1.2,
+          },
+        }
+      );
+
+      // Reveal — fade + rise on enter, staggered by column position
+      gsap.to(item, {
+        opacity: 1,
+        y: 0,
+        duration: 1.1,
+        delay: (i % 3) * 0.12,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: item,
+          start: 'top 94%',
+          toggleActions: 'play none none none',
+        },
+      });
+    });
+  </script>
+</body>
+</html>

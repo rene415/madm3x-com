@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  font-size: 16px;
+  background: #080808;
+}
+
+html, body {
+  background: #080808;
+  color: #e8e8e8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── gallery layout ─────────────────────────────────────── */
+.gallery {
+  columns: 3;
+  column-gap: 8px;
+  padding: 8px;
+}
+
+@media (max-width: 900px) {
+  .gallery { columns: 2; }
+}
+
+@media (max-width: 520px) {
+  .gallery { columns: 1; }
+}
+
+/* ── individual photo card ──────────────────────────────── */
+.photo-item {
+  break-inside: avoid;
+  margin-bottom: 8px;
+  overflow: hidden;
+  /* initial hidden state — GSAP reveals on scroll */
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.photo-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  /* slightly oversized so parallax shift doesn't expose edges */
+  transform: scale(1.14);
+  transform-origin: center center;
+  will-change: transform;
+}
+
+/* ── motion guard ────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .photo-item { opacity: 1 !important; transform: none !important; }
+  .photo-item img { transform: none !important; }
+}
