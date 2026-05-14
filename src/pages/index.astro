@@ -1,7 +1,64 @@
 ---
 import '../styles/global.css';
+import { readdir, readFile } from 'node:fs/promises';
+import { join } from 'node:path';
+import exifr from 'exifr';
 
-const photos = [
+function formatExposure(val) {
+  if (val >= 1) return `${val}s`;
+  return `1/${Math.round(1 / val)}s`;
+}
+
+function formatFStop(val) {
+  return `f/${Number.isInteger(val) ? val : val.toFixed(1)}`;
+}
+
+const EXIF_TAGS = [
+  'Make', 'Model', 'FNumber', 'ExposureTime', 'ISO',
+  'ExifImageWidth', 'ExifImageHeight', 'ImageWidth', 'ImageHeight',
+];
+
+const photosDir = join(process.cwd(), 'public/photos');
+let photos = [];
+
+try {
+  const files = await readdir(photosDir);
+  const images = files
+    .filter(f => /\.(jpe?g|png|webp|heic|tiff?)$/i.test(f) && f !== 'metadata.json')
+    .sort();
+
+  // Use pre-extracted sidecar when available (fast); fall back to live exifr per-file
+  let sidecar = {};
+  try {
+    sidecar = JSON.parse(await readFile(join(photosDir, 'metadata.json'), 'utf8'));
+  } catch { /* no sidecar yet */ }
+
+  photos = await Promise.all(images.map(async (file) => {
+    let meta = sidecar[file] ?? null;
+
+    if (!meta) {
+      try {
+        const raw = await exifr.parse(join(photosDir, file), EXIF_TAGS);
+        if (raw) {
+          const w = raw.ExifImageWidth ?? raw.ImageWidth ?? null;
+          const h = raw.ExifImageHeight ?? raw.ImageHeight ?? null;
+          meta = {
+            dimensions: w && h ? `${w} × ${h}` : null,
+            model:      [raw.Make, raw.Model].filter(Boolean).join(' ') || null,
+            fstop:      raw.FNumber      != null ? formatFStop(raw.FNumber)         : null,
+            exposure:   raw.ExposureTime != null ? formatExposure(raw.ExposureTime) : null,
+            iso:        raw.ISO          != null ? String(raw.ISO)                  : null,
+          };
+        }
+      } catch { /* no EXIF */ }
+    }
+
+    return { src: `/photos/${encodeURIComponent(file)}`, meta };
+  }));
+} catch { /* photos dir empty */ }
+
+// Fall back to placeholders while real photos haven't been uploaded yet
+const placeholders = [
   { seed: 'madm01', w: 600, h: 820 },
   { seed: 'madm02', w: 600, h: 440 },
   { seed: 'madm03', w: 600, h: 760 },
@@ -21,6 +78,18 @@ const photos = [
   { seed: 'madm17', w: 600, h: 660 },
   { seed: 'madm18', w: 600, h: 420 },
 ];
+
+const displayPhotos = photos.length > 0
+  ? photos
+  : placeholders.map(p => ({ src: `https://picsum.photos/seed/${p.seed}/${p.w}/${p.h}`, meta: null }));
+
+const metaLabels = [
+  ['Camera',     'model'],
+  ['Dimensions', 'dimensions'],
+  ['F-Stop',     'fstop'],
+  ['Exposure',   'exposure'],
+  ['ISO',        'iso'],
+];
 ---
 
 <!DOCTYPE html>
@@ -38,16 +107,26 @@ const photos = [
   </a>
 
   <main class="gallery">
-    {photos.map(({ seed, w, h }) => (
+    {displayPhotos.map(({ src, meta }, i) => (
       <div class="photo-item">
         <img
-          src={`https://picsum.photos/seed/${seed}/${w}/${h}`}
+          src={src}
           alt=""
           loading="lazy"
           decoding="async"
-          width={w}
-          height={h}
         />
+        {meta && (
+          <div class="photo-overlay">
+            <dl class="photo-meta">
+              {metaLabels.map(([label, key]) => meta[key] && (
+                <div class="meta-row">
+                  <dt>{label}</dt>
+                  <dd>{meta[key]}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        )}
       </div>
     ))}
   </main>
@@ -58,10 +137,10 @@ const photos = [
 
     gsap.registerPlugin(ScrollTrigger);
 
-    const items = document.querySelectorAll<HTMLElement>('.photo-item');
+    const items = document.querySelectorAll('.photo-item');
 
     items.forEach((item, i) => {
-      const img = item.querySelector<HTMLImageElement>('img');
+      const img = item.querySelector('img');
       if (!img) return;
 
       // Zoom-out — image starts scaled up and shrinks to normal as it scrolls through

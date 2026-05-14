@@ -1,0 +1,920 @@
+{
+  "DSC_0521.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON D7500",
+    "fstop": "f/7.1",
+    "exposure": "1/8000s",
+    "iso": "720"
+  },
+  "DSC_0564.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON D7500",
+    "fstop": "f/7.1",
+    "exposure": "1/800s",
+    "iso": "5000"
+  },
+  "DSC_0657.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON D7500",
+    "fstop": "f/7.1",
+    "exposure": "1/3200s",
+    "iso": "5000"
+  },
+  "DSC_0998.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON D7500",
+    "fstop": "f/10",
+    "exposure": "1/80s",
+    "iso": "11400"
+  },
+  "DSC_1070.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON D7500",
+    "fstop": "f/10",
+    "exposure": "1/80s",
+    "iso": "25600"
+  },
+  "DSC_1654.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON D7500",
+    "fstop": "f/10",
+    "exposure": "1/500s",
+    "iso": "800"
+  },
+  "DSC_1700.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON D7500",
+    "fstop": "f/10",
+    "exposure": "1/1250s",
+    "iso": "800"
+  },
+  "DSC_1701.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON D7500",
+    "fstop": "f/10",
+    "exposure": "1/1250s",
+    "iso": "800"
+  },
+  "DSC_1730.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON D7500",
+    "fstop": "f/10",
+    "exposure": "1/2500s",
+    "iso": "1000"
+  },
+  "DSC_1840.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON D7500",
+    "fstop": "f/10",
+    "exposure": "1/1600s",
+    "iso": "640"
+  },
+  "DSC_1919.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON D7500",
+    "fstop": "f/10",
+    "exposure": "1/3200s",
+    "iso": "800"
+  },
+  "DSC_1925.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON D7500",
+    "fstop": "f/10",
+    "exposure": "1/160s",
+    "iso": "5000"
+  },
+  "DSC_1985.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON D7500",
+    "fstop": "f/10",
+    "exposure": "1/3200s",
+    "iso": "800"
+  },
+  "DSC_2074.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON D7500",
+    "fstop": "f/7.1",
+    "exposure": "1/200s",
+    "iso": "100"
+  },
+  "DSC_2219.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON D7500",
+    "fstop": "f/5.6",
+    "exposure": "1/8000s",
+    "iso": "1400"
+  },
+  "DSC_2981.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON D7500",
+    "fstop": "f/5.6",
+    "exposure": "1/1250s",
+    "iso": "1000"
+  },
+  "DSC_3167.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON D7500",
+    "fstop": "f/5.6",
+    "exposure": "1/320s",
+    "iso": "4000"
+  },
+  "DSC_3697.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON D7500",
+    "fstop": "f/5.6",
+    "exposure": "1/200s",
+    "iso": "1000"
+  },
+  "DSC_4513.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON D7500",
+    "fstop": "f/5.6",
+    "exposure": "1/250s",
+    "iso": "320"
+  },
+  "DSC_4550.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON D7500",
+    "fstop": "f/5.6",
+    "exposure": "1/640s",
+    "iso": "800"
+  },
+  "DSC_4624.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON D7500",
+    "fstop": "f/5.6",
+    "exposure": "1/15s",
+    "iso": "2000"
+  },
+  "DSC_6636.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON D7500",
+    "fstop": "f/4",
+    "exposure": "1/8000s",
+    "iso": "2000"
+  },
+  "DSC_6837.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON D7500",
+    "fstop": "f/2.2",
+    "exposure": "1/500s",
+    "iso": "1250"
+  },
+  "DSC_6879.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON D7500",
+    "fstop": "f/2.2",
+    "exposure": "1/500s",
+    "iso": "3200"
+  },
+  "DSC_6952.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON D7500",
+    "fstop": "f/3.5",
+    "exposure": "1/800s",
+    "iso": "200"
+  },
+  "DSC_6959.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON D7500",
+    "fstop": "f/3.5",
+    "exposure": "1/800s",
+    "iso": "640"
+  },
+  "DSC_7064.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON D7500",
+    "fstop": "f/1.4",
+    "exposure": "1/200s",
+    "iso": "12800"
+  },
+  "DSC_7225.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON D7500",
+    "fstop": "f/8",
+    "exposure": "1/640s",
+    "iso": "1600"
+  },
+  "DSC_7234.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON D7500",
+    "fstop": "f/8",
+    "exposure": "1/640s",
+    "iso": "1000"
+  },
+  "DSC_7238.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON D7500",
+    "fstop": "f/2.8",
+    "exposure": "1/800s",
+    "iso": "1000"
+  },
+  "DSC_7302.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON D7500",
+    "fstop": "f/5",
+    "exposure": "1/800s",
+    "iso": "640"
+  },
+  "DSC_7303.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON D7500",
+    "fstop": "f/5",
+    "exposure": "1/800s",
+    "iso": "640"
+  },
+  "DSC_7310.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON D7500",
+    "fstop": "f/8",
+    "exposure": "1/800s",
+    "iso": "400"
+  },
+  "DSC_7324.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON D7500",
+    "fstop": "f/4.5",
+    "exposure": "1/1000s",
+    "iso": "400"
+  },
+  "DSC_7348.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON D7500",
+    "fstop": "f/7.1",
+    "exposure": "1/1600s",
+    "iso": "1000"
+  },
+  "DSC_7403.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON D7500",
+    "fstop": "f/1.4",
+    "exposure": "1/1600s",
+    "iso": "1000"
+  },
+  "DSC_7450.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON D7500",
+    "fstop": "f/4",
+    "exposure": "1/320s",
+    "iso": "2000"
+  },
+  "DSC_7616.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON D7500",
+    "fstop": "f/4",
+    "exposure": "1/800s",
+    "iso": "500"
+  },
+  "NKZ_0133.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/5",
+    "exposure": "1/160s",
+    "iso": "1000"
+  },
+  "NKZ_0179.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.8",
+    "exposure": "1/1600s",
+    "iso": "160"
+  },
+  "NKZ_0206.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/1600s",
+    "iso": "200"
+  },
+  "NKZ_0226.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/1600s",
+    "iso": "400"
+  },
+  "NKZ_0504.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/11",
+    "exposure": "1/800s",
+    "iso": "500"
+  },
+  "NKZ_0606.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/8",
+    "exposure": "1/800s",
+    "iso": "500"
+  },
+  "NKZ_0636.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/3.2",
+    "exposure": "1/3200s",
+    "iso": "500"
+  },
+  "NKZ_0831.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/16",
+    "exposure": "1/320s",
+    "iso": "500"
+  },
+  "NKZ_0936.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.6",
+    "exposure": "1/2500s",
+    "iso": "3200"
+  },
+  "NKZ_0943.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/3.2",
+    "exposure": "1/2500s",
+    "iso": "1000"
+  },
+  "NKZ_0948.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/2500s",
+    "iso": "1000"
+  },
+  "NKZ_1046.webp": null,
+  "NKZ_1075-Enhanced.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/11",
+    "exposure": "15s",
+    "iso": "50"
+  },
+  "NKZ_1116.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/10",
+    "exposure": "4s",
+    "iso": "3200"
+  },
+  "NKZ_1139.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/6.3",
+    "exposure": "3s",
+    "iso": "3200"
+  },
+  "NKZ_1316.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/14",
+    "exposure": "1s",
+    "iso": "160"
+  },
+  "NKZ_1378.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/2",
+    "exposure": "1/125s",
+    "iso": "250"
+  },
+  "NKZ_1413.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/16",
+    "exposure": "5s",
+    "iso": "50"
+  },
+  "NKZ_1419.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/2.2",
+    "exposure": "1/60s",
+    "iso": "200"
+  },
+  "NKZ_1443.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/60s",
+    "iso": "100"
+  },
+  "NKZ_1459.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/160s",
+    "iso": "1250"
+  },
+  "NKZ_1527.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/100s",
+    "iso": "1250"
+  },
+  "NKZ_1558.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/13s",
+    "iso": "100"
+  },
+  "NKZ_1626.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/6s",
+    "iso": "100"
+  },
+  "NKZ_1629.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/1250s",
+    "iso": "200"
+  },
+  "NKZ_1700.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/16",
+    "exposure": "1/30s",
+    "iso": "100"
+  },
+  "NKZ_2028.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/640s",
+    "iso": "800"
+  },
+  "NKZ_2125.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/2.8",
+    "exposure": "1/800s",
+    "iso": "100"
+  },
+  "NKZ_2168.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/2.8",
+    "exposure": "1/100s",
+    "iso": "800"
+  },
+  "NKZ_2252.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/2500s",
+    "iso": "125"
+  },
+  "NKZ_2357.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/8s",
+    "iso": "125"
+  },
+  "NKZ_2470.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/8000s",
+    "iso": "500"
+  },
+  "NKZ_2491.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/8000s",
+    "iso": "500"
+  },
+  "NKZ_2522.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/6400s",
+    "iso": "500"
+  },
+  "NKZ_2564.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/8000s",
+    "iso": "500"
+  },
+  "NKZ_2636.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/8000s",
+    "iso": "320"
+  },
+  "NKZ_2666.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/6400s",
+    "iso": "320"
+  },
+  "NKZ_2669.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/80s",
+    "iso": "800"
+  },
+  "NKZ_3342.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/5000s",
+    "iso": "320"
+  },
+  "NKZ_3545.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/16",
+    "exposure": "30s",
+    "iso": "50"
+  },
+  "NKZ_3602.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.6",
+    "exposure": "1/8000s",
+    "iso": "200"
+  },
+  "NKZ_3982.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/3200s",
+    "iso": "2000"
+  },
+  "NKZ_3994.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/1250s",
+    "iso": "2000"
+  },
+  "NKZ_4014.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/2500s",
+    "iso": "1000"
+  },
+  "NKZ_4030.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/8000s",
+    "iso": "1000"
+  },
+  "NKZ_4034.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/8000s",
+    "iso": "1000"
+  },
+  "NKZ_4063.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/2500s",
+    "iso": "1250"
+  },
+  "NKZ_4124.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/6.3",
+    "exposure": "1/800s",
+    "iso": "100"
+  },
+  "NKZ_4127.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/2.2",
+    "exposure": "1/800s",
+    "iso": "100"
+  },
+  "NKZ_4144.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/160s",
+    "iso": "500"
+  },
+  "NKZ_4685.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/500s",
+    "iso": "2000"
+  },
+  "NKZ_4714-Pano.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/500s",
+    "iso": "2000"
+  },
+  "NKZ_5393.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/2.2",
+    "exposure": "1/1600s",
+    "iso": "100"
+  },
+  "NKZ_5412.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/2.8",
+    "exposure": "1/1000s",
+    "iso": "320"
+  },
+  "NKZ_5442-Pano-2.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/16",
+    "exposure": "1/20s",
+    "iso": "50"
+  },
+  "NKZ_5548.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "240s",
+    "iso": "100"
+  },
+  "NKZ_6172.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/20s",
+    "iso": "1250"
+  },
+  "NKZ_6443.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/200s",
+    "iso": "160"
+  },
+  "NKZ_6472.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/200s",
+    "iso": "160"
+  },
+  "NKZ_6525.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/1250s",
+    "iso": "160"
+  },
+  "NKZ_6930.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/5",
+    "exposure": "1/1000s",
+    "iso": "1000"
+  },
+  "NKZ_7160.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/3.5",
+    "exposure": "15s",
+    "iso": "50"
+  },
+  "NKZ_7171.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/3.2",
+    "exposure": "1/50s",
+    "iso": "1600"
+  },
+  "NKZ_7193.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/1250s",
+    "iso": "1600"
+  },
+  "NKZ_7205.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/500s",
+    "iso": "800"
+  },
+  "NKZ_7211.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/500s",
+    "iso": "800"
+  },
+  "NKZ_7219.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/1250s",
+    "iso": "800"
+  },
+  "NKZ_7246.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/400s",
+    "iso": "800"
+  },
+  "NKZ_7276.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/160s",
+    "iso": "800"
+  },
+  "NKZ_7354.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/200s",
+    "iso": "800"
+  },
+  "NKZ_7430.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/2",
+    "exposure": "1/160s",
+    "iso": "800"
+  },
+  "NKZ_7442.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/4",
+    "exposure": "1/60s",
+    "iso": "800"
+  },
+  "NKZ_7455.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/4",
+    "exposure": "1/60s",
+    "iso": "800"
+  },
+  "NKZ_7496.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/160s",
+    "iso": "800"
+  },
+  "NKZ_7505.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/50s",
+    "iso": "800"
+  },
+  "NKZ_7533-Enhanced-NR.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/60s",
+    "iso": "12800"
+  },
+  "NKZ_7575.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/1250s",
+    "iso": "12800"
+  },
+  "NKZ_7653.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/1000s",
+    "iso": "160"
+  },
+  "NKZ_7688.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/2.2",
+    "exposure": "1/1000s",
+    "iso": "160"
+  },
+  "NKZ_7700.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/50s",
+    "iso": "2500"
+  },
+  "NKZ_7723.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.6",
+    "exposure": "1/13s",
+    "iso": "1250"
+  },
+  "NKZ_7861.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/250s",
+    "iso": "100"
+  },
+  "NKZ_7940.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/8",
+    "exposure": "1/640s",
+    "iso": "100"
+  },
+  "NKZ_8442.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/2000s",
+    "iso": "100"
+  },
+  "NKZ_8737.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/640s",
+    "iso": "100"
+  },
+  "NKZ_8837.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/2500s",
+    "iso": "160"
+  },
+  "NKZ_8991.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/200s",
+    "iso": "100"
+  },
+  "NKZ_9400.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/80s",
+    "iso": "1600"
+  },
+  "NKZ_9416.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/8000s",
+    "iso": "250"
+  },
+  "NKZ_9419-2.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/8000s",
+    "iso": "250"
+  },
+  "NKZ_9433.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/11",
+    "exposure": "60s",
+    "iso": "50"
+  },
+  "NKZ_9560.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/250s",
+    "iso": "2000"
+  },
+  "NKZ_9944.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/250s",
+    "iso": "250"
+  },
+  "copy.webp": {
+    "dimensions": null,
+    "model": "NIKON CORPORATION NIKON Z 6_2",
+    "fstop": "f/1.4",
+    "exposure": "1/1250s",
+    "iso": "100"
+  }
+}
