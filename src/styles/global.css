@@ -57,23 +57,30 @@ body {
   display: block;
   transform-origin: center center;
   will-change: transform;
-  transition: filter 0.4s ease;
 }
 
-.photo-item:hover img {
-  filter: blur(6px);
+/* ── siblings dim when any item is hovered ───────────────── */
+.gallery:has(.photo-item:hover) .photo-item:not(:hover) {
+  opacity: 0.4;
+  transition: opacity 0.4s ease;
 }
 
-/* ── metadata overlay ────────────────────────────────────── */
+/* ── metadata overlay — gradient on bottom half ──────────── */
 .photo-overlay {
   position: absolute;
-  inset: 0;
-  background: rgba(8, 8, 8, 0.68);
+  left: 0; right: 0; bottom: 0;
+  height: 52%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(8, 8, 8, 0.72) 45%,
+    rgba(8, 8, 8, 0.96) 100%
+  );
   display: flex;
   align-items: flex-end;
-  padding: 18px 16px;
+  padding: 14px 16px;
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.45s ease;
   pointer-events: none;
 }
 
