@@ -46,9 +46,16 @@ body {
   break-inside: avoid;
   margin-bottom: 8px;
   overflow: hidden;
+  border-radius: 0;
   /* initial hidden state — GSAP reveals on scroll */
   opacity: 0;
   transform: translateY(40px);
+  transition: border-radius 0.45s ease, box-shadow 0.45s ease;
+}
+
+.photo-item:hover {
+  border-radius: 10px;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
 }
 
 .photo-item img {
