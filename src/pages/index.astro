@@ -147,70 +147,75 @@ const metaLabels = [
 
     const items = document.querySelectorAll('.photo-item');
 
-    // Detect which horizontal edge each item sits near so the hover
-    // scale expands inward (away from the page edge) instead of clipping.
-    function getOriginX(item) {
-      const { left, right } = item.getBoundingClientRect();
-      const vw = window.innerWidth;
-      const col = vw / 4; // one column width
-      if (left < col)       return 'left';   // column 1 only
-      if (right > vw - col) return 'right';  // column 4 only
-      return 'center';                        // columns 2 & 3 unchanged
-    }
+    // On mobile/touch devices: show images flat, no scroll zoom or hover effects
+    if (window.matchMedia('(max-width: 720px)').matches) {
+      items.forEach(item => gsap.set(item, { opacity: 1, y: 0 }));
+    } else {
+      // Detect which horizontal edge each item sits near so the hover
+      // scale expands inward (away from the page edge) instead of clipping.
+      function getOriginX(item) {
+        const { left, right } = item.getBoundingClientRect();
+        const vw = window.innerWidth;
+        const col = vw / 4; // one column width
+        if (left < col)       return 'left';   // column 1 only
+        if (right > vw - col) return 'right';  // column 4 only
+        return 'center';                        // columns 2 & 3 unchanged
+      }
 
-    items.forEach((item, i) => {
-      const img = item.querySelector('img');
-      if (!img) return;
+      items.forEach((item, i) => {
+        const img = item.querySelector('img');
+        if (!img) return;
 
-      const originX = getOriginX(item);
+        const originX = getOriginX(item);
 
-      // Item hover scale expands away from the nearest page edge
-      gsap.set(item, { transformOrigin: `${originX} center` });
+        // Item hover scale expands away from the nearest page edge
+        gsap.set(item, { transformOrigin: `${originX} center` });
 
-      // Scroll-driven zoom-out — full journey (entry to exit) so the
-      // effect is visible throughout each image's time in the viewport
-      const scrollTween = gsap.fromTo(img,
-        { scale: 1.4 },
-        {
-          scale: 1.0,
-          ease: 'none',
+        // Scroll-driven zoom-out — full journey (entry to exit) so the
+        // effect is visible throughout each image's time in the viewport
+        const scrollTween = gsap.fromTo(img,
+          { scale: 1.4 },
+          {
+            scale: 1.0,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: item,
+              start: 'top bottom',
+              end: 'bottom top',
+              scrub: 1.2,
+            },
+          }
+        );
+
+        // Reveal — fires as soon as any part of the item enters the viewport
+        gsap.to(item, {
+          opacity: 1,
+          y: 0,
+          duration: 1.1,
+          delay: (i % 4) * 0.12,
+          ease: 'power3.out',
           scrollTrigger: {
             trigger: item,
             start: 'top bottom',
-            end: 'bottom top',
-            scrub: 1.2,
+            toggleActions: 'play none none none',
           },
-        }
-      );
+        });
 
-      // Reveal — fires as soon as any part of the item enters the viewport
-      gsap.to(item, {
-        opacity: 1,
-        y: 0,
-        duration: 1.1,
-        delay: (i % 4) * 0.12,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: item,
-          start: 'top bottom',
-          toggleActions: 'play none none none',
-        },
+        const st = scrollTween.scrollTrigger;
+
+        // Hover — pause scroll zoom, show full image, pop card forward
+        item.addEventListener('mouseenter', () => {
+          st.disable(false);
+          gsap.to(img,  { scale: 1.0,  duration: 0.45, ease: 'power2.out',   overwrite: 'auto' });
+          gsap.to(item, { scale: 1.12, zIndex: 20, duration: 0.45, ease: 'power2.out', overwrite: 'auto' });
+        });
+
+        item.addEventListener('mouseleave', () => {
+          gsap.to(item, { scale: 1.0, zIndex: 1, duration: 0.4, ease: 'power2.inOut', overwrite: 'auto' });
+          st.enable();
+        });
       });
-
-      const st = scrollTween.scrollTrigger;
-
-      // Hover — pause scroll zoom, show full image, pop card forward
-      item.addEventListener('mouseenter', () => {
-        st.disable(false);
-        gsap.to(img,  { scale: 1.0,  duration: 0.45, ease: 'power2.out',   overwrite: 'auto' });
-        gsap.to(item, { scale: 1.12, zIndex: 20, duration: 0.45, ease: 'power2.out', overwrite: 'auto' });
-      });
-
-      item.addEventListener('mouseleave', () => {
-        gsap.to(item, { scale: 1.0, zIndex: 1, duration: 0.4, ease: 'power2.inOut', overwrite: 'auto' });
-        st.enable();
-      });
-    });
+    }
   </script>
 </body>
 </html>
