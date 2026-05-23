@@ -151,22 +151,23 @@ const metaLabels = [
       const img = item.querySelector('img');
       if (!img) return;
 
-      // Scroll-driven zoom-out
+      // Scroll-driven zoom-out — resolves to full image by the time
+      // the item reaches viewport center (so bottom items are never stuck zoomed)
       const scrollTween = gsap.fromTo(img,
-        { scale: 1.4 },
+        { scale: 1.35 },
         {
           scale: 1.0,
           ease: 'none',
           scrollTrigger: {
             trigger: item,
             start: 'top bottom',
-            end: 'bottom top',
-            scrub: 1.5,
+            end: 'center center',
+            scrub: 0.8,
           },
         }
       );
 
-      // Reveal — fade + rise on enter, staggered by column position
+      // Reveal — fires as soon as any part of the item enters the viewport
       gsap.to(item, {
         opacity: 1,
         y: 0,
@@ -175,7 +176,7 @@ const metaLabels = [
         ease: 'power3.out',
         scrollTrigger: {
           trigger: item,
-          start: 'top 94%',
+          start: 'top bottom',
           toggleActions: 'play none none none',
         },
       });
