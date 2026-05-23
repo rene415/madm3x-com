@@ -166,21 +166,19 @@ const metaLabels = [
 
       // Item hover scale expands away from the nearest page edge
       gsap.set(item, { transformOrigin: `${originX} center` });
-      // Image scroll zoom always pivots from image center (shows middle of photo)
-      gsap.set(img,  { transformOrigin: 'center center' });
 
-      // Scroll-driven zoom-out — resolves to full image by the time
-      // the item reaches viewport center (so bottom items are never stuck zoomed)
+      // Scroll-driven zoom-out — full journey (entry to exit) so the
+      // effect is visible throughout each image's time in the viewport
       const scrollTween = gsap.fromTo(img,
-        { scale: 1.35 },
+        { scale: 1.4 },
         {
           scale: 1.0,
           ease: 'none',
           scrollTrigger: {
             trigger: item,
             start: 'top bottom',
-            end: 'center center',
-            scrub: 0.8,
+            end: 'bottom top',
+            scrub: 1.2,
           },
         }
       );
