@@ -152,10 +152,10 @@ const metaLabels = [
     function getOriginX(item) {
       const { left, right } = item.getBoundingClientRect();
       const vw = window.innerWidth;
-      const col = vw / 4; // approximate column width
-      if (left < col * 0.75)        return 'left';
-      if (right > vw - col * 0.75)  return 'right';
-      return 'center';
+      const col = vw / 4; // one column width
+      if (left < col)       return 'left';   // column 1 only
+      if (right > vw - col) return 'right';  // column 4 only
+      return 'center';                        // columns 2 & 3 unchanged
     }
 
     items.forEach((item, i) => {
