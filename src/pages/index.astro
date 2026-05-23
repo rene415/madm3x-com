@@ -147,9 +147,27 @@ const metaLabels = [
 
     const items = document.querySelectorAll('.photo-item');
 
+    // Detect which horizontal edge each item sits near so the hover
+    // scale expands inward (away from the page edge) instead of clipping.
+    function getOriginX(item) {
+      const { left, right } = item.getBoundingClientRect();
+      const vw = window.innerWidth;
+      const col = vw / 4; // approximate column width
+      if (left < col * 0.75)        return 'left';
+      if (right > vw - col * 0.75)  return 'right';
+      return 'center';
+    }
+
     items.forEach((item, i) => {
       const img = item.querySelector('img');
       if (!img) return;
+
+      const originX = getOriginX(item);
+
+      // Item hover scale expands away from the nearest page edge
+      gsap.set(item, { transformOrigin: `${originX} center` });
+      // Image scroll zoom always pivots from image center (shows middle of photo)
+      gsap.set(img,  { transformOrigin: 'center center' });
 
       // Scroll-driven zoom-out — resolves to full image by the time
       // the item reaches viewport center (so bottom items are never stuck zoomed)
@@ -185,14 +203,14 @@ const metaLabels = [
 
       // Hover — pause scroll zoom, show full image, pop card forward
       item.addEventListener('mouseenter', () => {
-        st.disable(false); // pause without resetting scroll position
-        gsap.to(img,  { scale: 1.0, duration: 0.45, ease: 'power2.out',   overwrite: 'auto' });
+        st.disable(false);
+        gsap.to(img,  { scale: 1.0,  duration: 0.45, ease: 'power2.out',   overwrite: 'auto' });
         gsap.to(item, { scale: 1.12, zIndex: 20, duration: 0.45, ease: 'power2.out', overwrite: 'auto' });
       });
 
       item.addEventListener('mouseleave', () => {
         gsap.to(item, { scale: 1.0, zIndex: 1, duration: 0.4, ease: 'power2.inOut', overwrite: 'auto' });
-        st.enable(); // hand img scale back to scroll trigger
+        st.enable();
       });
     });
   </script>
