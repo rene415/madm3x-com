@@ -32,10 +32,15 @@ console.log('\nHashing password…');
 const hash      = await bcrypt.hash(password, 12);
 const jwtSecret = randomBytes(32).toString('hex');
 
+// Docker Compose env_file interpolates $ — escape them as $$
+const escapedHash = hash.replace(/\$/g, '$$$$');
+
 console.log('\n─────────────────────────────────────────────────────');
 console.log('Add these lines to your .env file on the server:\n');
 console.log(`ADMIN_EMAIL=${email}`);
-console.log(`ADMIN_PASSWORD_HASH=${hash}`);
+console.log(`ADMIN_PASSWORD_HASH=${escapedHash}`);
 console.log(`JWT_SECRET=${jwtSecret}`);
 console.log(`DATA_DIR=/app/data`);
+console.log('\nNote: $$ in the hash is correct — Docker Compose');
+console.log('unescapes $$ → $ when passing env vars to the container.');
 console.log('─────────────────────────────────────────────────────\n');

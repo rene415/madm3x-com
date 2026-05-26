@@ -4,17 +4,14 @@ import { verifyToken } from './lib/auth.ts';
 export const onRequest = defineMiddleware(async (context, next) => {
   const { pathname } = context.url;
 
-  // Initialise locals
-  context.locals.user = null;
+  // Always resolve the token so API routes can read locals.user
+  const token   = context.cookies.get('admin_token')?.value;
+  const payload = token ? await verifyToken(token) : null;
+  context.locals.user = payload;
 
-  // Resolve auth for every admin route except the login page itself
-  if (pathname.startsWith('/admin')) {
-    const token   = context.cookies.get('admin_token')?.value;
-    const payload = token ? await verifyToken(token) : null;
-
-    if (payload) {
-      context.locals.user = payload;
-    } else if (!pathname.startsWith('/admin/login')) {
+  // Redirect unauthenticated visitors away from protected admin pages
+  if (pathname.startsWith('/admin') && !pathname.startsWith('/admin/login')) {
+    if (!payload) {
       return context.redirect('/admin/login');
     }
   }
