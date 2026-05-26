@@ -1,5 +1,5 @@
 ---
-import { listGalleries, listPhotos, photoUrl } from '../../lib/galleries.ts';
+import { listGalleries, listPhotos, photoUrl } from '../../../../lib/galleries.ts';
 
 const galleries = await listGalleries();
 
@@ -96,7 +96,7 @@ for (const g of galleries) {
       <a href="/"><img src="/logo/logo-color.png" alt="MADM3X" /></a>
       <span>Admin</span>
     </div>
-    <a href="/admin/logout" class="btn btn-ghost">Sign out</a>
+    <a href="/mad/3x/admin/logout" class="btn btn-ghost">Sign out</a>
   </header>
 
   <main class="main">
@@ -113,7 +113,7 @@ for (const g of galleries) {
     ) : (
       <div class="grid">
         {galleries.map(g => (
-          <a href={`/admin/gallery/${g.slug}`} class="card">
+          <a href={`/mad/3x/admin/gallery/${g.slug}`} class="card">
             <div class="card-cover">
               {covers[g.slug]
                 ? <img src={covers[g.slug]!} alt="" loading="lazy" />
@@ -209,7 +209,7 @@ for (const g of galleries) {
         });
         const data = await res.json();
         if (!res.ok) { showError(data.error ?? 'Something went wrong'); return; }
-        window.location.href = `/admin/gallery/${data.slug}`;
+        window.location.href = `/mad/3x/admin/gallery/${data.slug}`;
       } catch {
         showError('Network error — please try again.');
       } finally {

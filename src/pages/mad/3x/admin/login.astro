@@ -1,9 +1,9 @@
 ---
-import { checkCredentials, createToken } from '../../lib/auth.ts';
+import { checkCredentials, createToken } from '../../../../lib/auth.ts';
 
 // Redirect already-logged-in users
 if (Astro.locals.user) {
-  return Astro.redirect('/admin/dashboard');
+  return Astro.redirect('/mad/3x/admin/dashboard');
 }
 
 let error = '';
@@ -22,7 +22,7 @@ if (Astro.request.method === 'POST') {
       maxAge:    60 * 60 * 24 * 7,
       path:      '/',
     });
-    return Astro.redirect('/admin/dashboard');
+    return Astro.redirect('/mad/3x/admin/dashboard');
   } else {
     error = 'Invalid email or password.';
   }

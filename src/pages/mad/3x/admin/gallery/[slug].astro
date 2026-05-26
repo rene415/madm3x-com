@@ -1,11 +1,11 @@
 ---
-import { getGallery, listPhotos, getMetadata, photoUrl } from '../../../lib/galleries.ts';
+import { getGallery, listPhotos, getMetadata, photoUrl } from '../../../../../lib/galleries.ts';
 
 const { slug } = Astro.params;
-if (!slug) return Astro.redirect('/admin/dashboard');
+if (!slug) return Astro.redirect('/mad/3x/admin/dashboard');
 
 const gallery = await getGallery(slug);
-if (!gallery) return Astro.redirect('/admin/dashboard');
+if (!gallery) return Astro.redirect('/mad/3x/admin/dashboard');
 
 const photos   = await listPhotos(slug);
 const metadata = await getMetadata(slug);
@@ -144,11 +144,11 @@ const metadata = await getMetadata(slug);
     <div class="breadcrumb">
       <a href="/"><img src="/logo/logo-color.png" alt="MADM3X" /></a>
       <span class="breadcrumb-sep">/</span>
-      <a href="/admin/dashboard" class="breadcrumb-link">Galleries</a>
+      <a href="/mad/3x/admin/dashboard" class="breadcrumb-link">Galleries</a>
       <span class="breadcrumb-sep">/</span>
       <span class="breadcrumb-link" style="color:rgba(255,255,255,0.7)">{gallery.title}</span>
     </div>
-    <a href="/admin/logout" class="btn btn-ghost">Sign out</a>
+    <a href="/mad/3x/admin/logout" class="btn btn-ghost">Sign out</a>
   </header>
 
   <main class="main">
@@ -407,7 +407,7 @@ const metadata = await getMetadata(slug);
     document.getElementById('delete-gallery-btn')?.addEventListener('click', async () => {
       if (!confirm(`Delete the entire "${gallerySlug}" gallery and all its photos? This cannot be undone.`)) return;
       const res = await fetch(`/api/gallery/${gallerySlug}`, { method: 'DELETE' });
-      if (res.ok) window.location.href = '/admin/dashboard';
+      if (res.ok) window.location.href = '/mad/3x/admin/dashboard';
     });
   </script>
 </body>
