@@ -1,0 +1,81 @@
+---
+import { checkCredentials, createToken } from '../../lib/auth.ts';
+
+// Redirect already-logged-in users
+if (Astro.locals.user) {
+  return Astro.redirect('/admin/dashboard');
+}
+
+let error = '';
+
+if (Astro.request.method === 'POST') {
+  const form     = await Astro.request.formData();
+  const email    = String(form.get('email') ?? '');
+  const password = String(form.get('password') ?? '');
+
+  if (await checkCredentials(email, password)) {
+    const token = await createToken(email);
+    Astro.cookies.set('admin_token', token, {
+      httpOnly:  true,
+      secure:    import.meta.env.PROD,
+      sameSite:  'lax',
+      maxAge:    60 * 60 * 24 * 7,
+      path:      '/',
+    });
+    return Astro.redirect('/admin/dashboard');
+  } else {
+    error = 'Invalid email or password.';
+  }
+}
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MADM3X · Admin Login</title>
+  <link rel="icon" type="image/png" href="/logo/logo-bw.png" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { background: #080808; color: #e8e8e8; font-family: 'Courier New', monospace;
+      min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+    .card { width: 100%; max-width: 380px; padding: 40px 36px; }
+    .logo { display: block; width: 60px; margin: 0 auto 32px; }
+    h1 { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.18em;
+      color: rgba(255,255,255,0.35); text-align: center; margin-bottom: 28px; }
+    label { display: block; font-size: 0.6rem; text-transform: uppercase;
+      letter-spacing: 0.12em; color: rgba(255,255,255,0.4); margin-bottom: 6px; }
+    input { width: 100%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 6px; padding: 10px 12px; color: #fff; font-family: inherit;
+      font-size: 0.85rem; outline: none; transition: border-color 0.2s; }
+    input:focus { border-color: rgba(255,255,255,0.35); }
+    .field { margin-bottom: 16px; }
+    .btn { width: 100%; margin-top: 8px; background: #fff; color: #080808; border: none;
+      border-radius: 6px; padding: 11px; font-family: inherit; font-size: 0.75rem;
+      text-transform: uppercase; letter-spacing: 0.12em; cursor: pointer; font-weight: 700;
+      transition: opacity 0.2s; }
+    .btn:hover { opacity: 0.88; }
+    .error { color: #ff6b6b; font-size: 0.7rem; text-align: center;
+      margin-top: 14px; letter-spacing: 0.06em; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img src="/logo/logo-color.png" alt="MADM3X" class="logo" />
+    <h1>Admin Access</h1>
+    <form method="POST">
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" autocomplete="email" required />
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" autocomplete="current-password" required />
+      </div>
+      <button type="submit" class="btn">Sign In</button>
+      {error && <p class="error">{error}</p>}
+    </form>
+  </div>
+</body>
+</html>

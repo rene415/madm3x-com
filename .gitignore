@@ -4,3 +4,5 @@ node_modules/
 .env
 .env.*
 !.env.example
+# Local gallery data (lives in Docker volume on the server, not in git)
+data/

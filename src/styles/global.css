@@ -134,6 +134,11 @@ body {
   text-align: right;
 }
 
+/* ── gallery link wrapper (homepage) ────────────────────── */
+.photo-gallery-link {
+  display: block;
+}
+
 /* ── site logo ───────────────────────────────────────────── */
 .site-logo {
   position: fixed;
