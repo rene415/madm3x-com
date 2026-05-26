@@ -1,15 +1,10 @@
 ---
 import '../styles/global.css';
-import { randomHomePhotos, listGalleries } from '../lib/galleries.ts';
+import { randomHomePhotos } from '../lib/galleries.ts';
 
-// Dynamic random selection from all published galleries (re-randomises each load)
-const galleries = await listGalleries();
-const published  = galleries.filter(g => g.published);
-
-// ~4 photos per gallery, interleaved and shuffled
-const photos = published.length > 0
-  ? await randomHomePhotos(4)
-  : [];
+// Dynamic random selection — up to 100 photos, spread across all published galleries.
+// Uses whatever is available if fewer than 100 photos exist total.
+const photos = await randomHomePhotos(100);
 
 // Fall back to placeholder images while real galleries haven't been set up yet
 const placeholders = [

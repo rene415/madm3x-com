@@ -123,15 +123,20 @@ export interface HomePhoto {
   galleryTitle: string;
 }
 
-export async function randomHomePhotos(perGallery = 4): Promise<HomePhoto[]> {
+export async function randomHomePhotos(maxTotal = 100): Promise<HomePhoto[]> {
   const galleries = await listGalleries();
   const published = galleries.filter(g => g.published);
+  if (published.length === 0) return [];
+
+  // Distribute slots evenly across galleries, at least 1 per gallery
+  const perGallery = Math.max(1, Math.ceil(maxTotal / published.length));
+
   const result: HomePhoto[] = [];
 
   for (const gallery of published) {
     const photos   = await listPhotos(gallery.slug);
     const metadata = await getMetadata(gallery.slug);
-    // Fisher-Yates shuffle then take N
+    // Shuffle and take up to perGallery photos from this gallery
     const shuffled = [...photos].sort(() => Math.random() - 0.5);
     for (const filename of shuffled.slice(0, perGallery)) {
       result.push({
@@ -142,6 +147,9 @@ export async function randomHomePhotos(perGallery = 4): Promise<HomePhoto[]> {
       });
     }
   }
-  // Shuffle the combined list so galleries interleave
-  return result.sort(() => Math.random() - 0.5);
+
+  // Interleave galleries, then cap at maxTotal (use all if fewer available)
+  return result
+    .sort(() => Math.random() - 0.5)
+    .slice(0, maxTotal);
 }
