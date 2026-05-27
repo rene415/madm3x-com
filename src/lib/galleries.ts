@@ -1,4 +1,4 @@
-import { readdir, readFile, writeFile, mkdir, rm, access } from 'node:fs/promises';
+import { readdir, readFile, writeFile, mkdir, rm, access, stat } from 'node:fs/promises';
 import { join } from 'node:path';
 
 export const DATA_DIR      = process.env.DATA_DIR ?? join(process.cwd(), 'data');
@@ -113,6 +113,26 @@ export async function saveMetadata(slug: string, data: Record<string, PhotoMeta>
 // ── photo URL helper ──────────────────────────────────────────────────────────
 export function photoUrl(slug: string, filename: string): string {
   return `/photos/${encodeURIComponent(slug)}/${encodeURIComponent(filename)}`;
+}
+
+// ── storage helpers ───────────────────────────────────────────────────────────
+export function formatBytes(bytes: number): string {
+  if (bytes < 1024) return `${bytes} B`;
+  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
+  if (bytes < 1024 * 1024 * 1024) return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+  return `${(bytes / (1024 * 1024 * 1024)).toFixed(2)} GB`;
+}
+
+export async function getGalleryStorageBytes(slug: string): Promise<number> {
+  const photos = await listPhotos(slug);
+  let total = 0;
+  for (const f of photos) {
+    try {
+      const s = await stat(join(GALLERIES_DIR, slug, 'photos', f));
+      total += s.size;
+    } catch { /* skip missing files */ }
+  }
+  return total;
 }
 
 // ── random sample from all published galleries (for homepage) ─────────────────

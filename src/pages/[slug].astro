@@ -7,9 +7,37 @@ if (!slug) return Astro.redirect('/');
 
 const gallery = await getGallery(slug);
 
-// 404 if gallery doesn't exist or isn't published
+// 404 if gallery doesn't exist or isn't published — return a real HTML page
 if (!gallery || !gallery.published) {
-  return new Response(null, { status: 404 });
+  const isDraft = gallery && !gallery.published;
+  const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>MADM3X</title>
+  <link rel="icon" type="image/png" href="/logo/logo-bw.png">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{background:#080808;color:#e8e8e8;font-family:'Courier New',monospace;
+      min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px}
+    img{width:56px;opacity:.7}
+    p{font-size:.7rem;text-transform:uppercase;letter-spacing:.18em;color:rgba(255,255,255,.35);text-align:center}
+    a{font-size:.65rem;text-transform:uppercase;letter-spacing:.15em;color:rgba(255,255,255,.4);
+      text-decoration:underline;text-underline-offset:4px}
+    a:hover{color:rgba(255,255,255,.7)}
+  </style>
+</head>
+<body>
+  <img src="/logo/logo-color.png" alt="MADM3X">
+  <p>${isDraft ? 'This gallery isn\'t public yet.' : 'Gallery not found.'}</p>
+  <a href="/">← Back to home</a>
+</body>
+</html>`;
+  return new Response(html, {
+    status: isDraft ? 404 : 404,
+    headers: { 'Content-Type': 'text/html; charset=utf-8' },
+  });
 }
 
 const photos   = await listPhotos(slug);

@@ -1,14 +1,19 @@
 ---
-import { listGalleries, listPhotos, photoUrl } from '../../../../lib/galleries.ts';
+import { listGalleries, listPhotos, photoUrl, getGalleryStorageBytes, formatBytes } from '../../../../lib/galleries.ts';
 
 const galleries = await listGalleries();
 
-// Grab first photo of each gallery for cover art
+// Grab first photo + size for each gallery
 const covers: Record<string, string | null> = {};
+const sizes:  Record<string, number>        = {};
 for (const g of galleries) {
-  const photos = await listPhotos(g.slug);
+  const photos  = await listPhotos(g.slug);
   covers[g.slug] = photos.length > 0 ? photoUrl(g.slug, photos[0]) : null;
+  sizes[g.slug]  = await getGalleryStorageBytes(g.slug);
 }
+const totalBytes  = Object.values(sizes).reduce((a, b) => a + b, 0);
+const totalPhotos = galleries.reduce(async (acc, g) => (await acc) + (await listPhotos(g.slug)).length, Promise.resolve(0));
+const photoCount  = await totalPhotos;
 ---
 
 <!DOCTYPE html>
@@ -88,6 +93,9 @@ for (const g of galleries) {
     .modal-actions { display: flex; gap: 10px; margin-top: 8px; }
     .modal-actions .btn { flex: 1; justify-content: center; }
     .error-msg { color: #ff6b6b; font-size: 0.65rem; margin-top: 10px; display: none; }
+    .storage-badge { font-size: 0.65rem; color: rgba(255,255,255,0.35); text-transform: uppercase;
+      letter-spacing: 0.1em; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+      padding: 5px 10px; border-radius: 6px; white-space: nowrap; }
   </style>
 </head>
 <body>
@@ -102,7 +110,14 @@ for (const g of galleries) {
   <main class="main">
     <div class="section-header">
       <span class="section-title">Galleries — {galleries.length}</span>
-      <button class="btn" id="new-btn">+ New Gallery</button>
+      <div style="display:flex;align-items:center;gap:16px;">
+        {totalBytes > 0 && (
+          <span class="storage-badge" title={`${photoCount} photos across ${galleries.length} galler${galleries.length === 1 ? 'y' : 'ies'}`}>
+            💾 {formatBytes(totalBytes)}
+          </span>
+        )}
+        <button class="btn" id="new-btn">+ New Gallery</button>
+      </div>
     </div>
 
     {galleries.length === 0 ? (
@@ -123,7 +138,7 @@ for (const g of galleries) {
             <div class="card-body">
               <div class="card-title">{g.title}</div>
               <div class="card-meta">
-                <span class="card-count">{g.slug}</span>
+                <span class="card-count">{sizes[g.slug] > 0 ? formatBytes(sizes[g.slug]) : '—'}</span>
                 <span class={`badge ${g.published ? 'badge-live' : 'badge-draft'}`}>
                   {g.published ? 'Live' : 'Draft'}
                 </span>
